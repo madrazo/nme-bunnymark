@@ -5,6 +5,7 @@ import nme.display.Sprite;
 import nme.events.Event;
 import nme.events.MouseEvent;
 import nme.Lib;
+import stats.DisplayStats;
 
 /**
  * @author Joshua Granick
@@ -13,7 +14,8 @@ import nme.Lib;
 class BunnyMark extends Sprite 
 {
 	private var bg:Background;
-	private var fps:FPS;
+//	private var fps:FPS;
+	private var stats:DisplayStats;
 
 	function new()
 	{
@@ -37,9 +39,13 @@ class BunnyMark extends Sprite
 
 		addChild (new TileTest ());
 
-		fps = new FPS();
-		addChild(fps);
-		fps.addEventListener(MouseEvent.CLICK, toggleFPS);
+		//fps = new FPS();
+		//addChild(fps);
+		//fps.addEventListener(MouseEvent.CLICK, toggleFPS);
+
+		var myStats = new stats.DisplayStats(10,20);
+        	addChild(myStats);
+
 	}
 
 	function resize(e) 
